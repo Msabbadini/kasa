@@ -1,4 +1,4 @@
-import {Typography} from "@/ui/ui_toolkit/typography/typography";
+import {Typography} from "@/components/typography/typography";
 import useWindowDimension from "@/utils/useWindowDimension";
 
 interface Props {

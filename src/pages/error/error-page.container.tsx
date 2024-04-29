@@ -1,4 +1,4 @@
-import {ErrorPageView} from "@/ui/modules/error-page/error-page.view";
+import {ErrorPageView} from "@/layouts/error/error-page.view";
 
 export const ErrorPageContainer=()=>{
     return(<ErrorPageView/>)

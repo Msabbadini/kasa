@@ -1,9 +1,5 @@
-// @ts-ignore
-import StarActive from "@/assets/star-active.png";
-// @ts-ignore
-import StarInactive from "@/assets/star-inactive.png";
-
-
+const StarActive =  `${process.env.PUBLIC_URL}/assets/star-active.png`;
+const StarInactive =  `${process.env.PUBLIC_URL}/assets/star-inactive.png`;
 interface Props {
  numberStars : number,
     defaultNumber : number

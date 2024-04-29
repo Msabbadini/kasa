@@ -1,6 +1,5 @@
-import {Typography} from "@/ui/ui_toolkit/typography/typography";
+import {Typography} from "@/components/typography/typography";
 import useWindowDimension from "@/utils/useWindowDimension";
-import clsx from "clsx";
 
 interface Props {
     type: string
@@ -23,7 +22,7 @@ export const Banner = ({type}:Props)=>{
 
     // @ts-ignore
     return (
-        <div className={clsx(typeStyle)}>
+        <div className={`${typeStyle}`}>
             {type === 'landing'  && <Typography theme={"secondary"} component={"p"} variant={width > 769 ? "h1":"lead"}>Chez vous, partout et ailleurs</Typography>}
         </div>
     )

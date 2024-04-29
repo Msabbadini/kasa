@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import React from "react";
 
 interface Props {
@@ -79,9 +78,7 @@ export const Typography = ({
 //#endregion **** Align Font ****
     return (
         <Component
-            className={
-                clsx(variantStyles, colorStyles, alignStyles, className)
-            }
+            className={`${variantStyles} ${colorStyles} ${alignStyles} ${className}`}
         >
             {children}
         </Component>

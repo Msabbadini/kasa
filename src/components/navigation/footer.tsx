@@ -1,8 +1,8 @@
-// @ts-ignore
-import logo from "../../../../public/assets/logo-footer.png"
+
 import {Typography} from "@/components/typography/typography";
 import useWindowDimension from "@/utils/useWindowDimension";
 import {NavLink} from "react-router-dom";
+const logo =  `${process.env.PUBLIC_URL}/assets/logo-footer.png`;
 export  const Footer =()=>{
 const {width}= useWindowDimension()
     return(

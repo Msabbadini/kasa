@@ -1,5 +1,5 @@
-import {HeroTopview} from "@/ui/modules/landing-page/components/hero-top_view";
-import {ContentView} from "@/ui/modules/landing-page/components/content.view";
+import {HeroTopview} from "@/layouts/landing/components/hero-top_view";
+import {ContentView} from "@/layouts/landing/components/content.view";
 
 export const LandingPageView = ()=>{
     return (

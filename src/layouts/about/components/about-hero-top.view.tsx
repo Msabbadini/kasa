@@ -1,5 +1,5 @@
-import {Container} from "@/ui/components/container/container";
-import {Banner} from "@/ui/ui_toolkit/banner/banner";
+import {Container} from "@/layouts/generic/container/container";
+import {Banner} from "@/components/banner/banner";
 
 export const AboutHeroTopView =()=>{
     return(

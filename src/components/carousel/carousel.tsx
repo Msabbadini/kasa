@@ -1,10 +1,7 @@
 import {useState} from "react";
-// @ts-ignore
-import ArrowRight from "@/assets/chevron_carousel_right.png"
-// @ts-ignore
-import ArrowLeft from "@/assets/chevron_carousel_left.png"
-import {Typography} from "@/ui/ui_toolkit/typography/typography";
-
+import {Typography} from "@/components/typography/typography";
+const ArrowRight =  `${process.env.PUBLIC_URL}/assets/chevron_carousel_right.png`;
+const ArrowLeft =  `${process.env.PUBLIC_URL}/assets/chevron_carousel_left.png`;
 interface Props {
     images: Array<string>
 }

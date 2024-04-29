@@ -1,12 +1,21 @@
-import {AboutData} from "@/ui/modules/about-page/data/about-data";
-import {Container} from "@/ui/components/container/container";
-import {Collapse} from "@/ui/ui_toolkit/collapse/collapse";
+import React, { useState, useEffect, useCallback } from 'react';
+import {Container} from "@/layouts/generic/container/container";
+import {Collapse} from "@/components/collapse/collapse";
+import {AboutDataType} from "@/utils/ts/aboutData";
+import {getAbouts} from "@/utils/api/api";
+
 export const AboutContentView = ()=>{
+
+    const [data, setData] = useState<Array<AboutDataType>>([])
+
+    useEffect(()=>{
+        getAbouts(setData)
+    }, [setData])
 
     return (
       <Container>
           <div className={'about-content'}>
-              {AboutData.map(a =>{
+              {data.map(a =>{
                 return   <Collapse title={a.title} contentDesc={a.content}/>
               })}
           </div>

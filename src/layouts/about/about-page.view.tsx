@@ -1,6 +1,6 @@
 
-import {AboutHeroTopView} from "@/ui/modules/about-page/components/about-hero-top.view";
-import {AboutContentView} from "@/ui/modules/about-page/components/about-content.view";
+import {AboutHeroTopView} from "@/layouts/about/components/about-hero-top.view";
+import {AboutContentView} from "@/layouts/about/components/about-content.view";
 
 export const AboutPageView=()=>{
     return(

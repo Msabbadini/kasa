@@ -1,10 +1,16 @@
-import {Container} from "@/ui/components/container/container";
-import {Card} from "@/ui/ui_toolkit/card/card";
-import data from "@/api/data.json"
+import {useState, useEffect} from "react";
+
+import {Container} from "@/layouts/generic/container/container";
+import {Card} from "@/components/card/card";
+import {getHousings} from "@/utils/api/api";
 
 export const ContentView = () => {
 
+    const [data, setData] = useState<Array<any>>([])
 
+    useEffect(() => {
+        getHousings(setData)
+    }, [])
 
     return (
         <Container>
@@ -12,7 +18,6 @@ export const ContentView = () => {
                 {data.map(d=>{
                     return <Card nameCard={d.title} key={d.id} imgCard={d.cover}  idCard={d.id}/>
                 })}
-
 
             </div>
         </Container>

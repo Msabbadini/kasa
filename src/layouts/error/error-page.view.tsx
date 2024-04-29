@@ -1,5 +1,5 @@
-import {Container} from "@/ui/components/container/container";
-import {Typography} from "@/ui/ui_toolkit/typography/typography";
+import {Container} from "@/layouts/generic/container/container";
+import {Typography} from "@/components/typography/typography";
 import {NavLink} from "react-router-dom";
 import useWindowDimension from "@/utils/useWindowDimension";
 

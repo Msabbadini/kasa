@@ -1,9 +1,7 @@
 import {useState} from "react";
-import {Typography} from "@/ui/ui_toolkit/typography/typography";
-// @ts-ignore
-import ArrowRight from "@/assets/chevron_carousel_right.png"
-import clsx from "clsx";
+import {Typography} from "@/components/typography/typography";
 import useWindowDimension from "@/utils/useWindowDimension";
+const ArrowRight =  `${process.env.PUBLIC_URL}/assets/chevron_carousel_right.png`;
 
 interface Props {
     title: String,
@@ -22,13 +20,13 @@ export const Collapse = ({title, contentArray, contentDesc}: Props) => {
                         {title}
                     </Typography>
                     <img
-                        className={clsx("arrow",toggle ? "arrow-up" : "arrow-down")}
+                        className={`arrow ${toggle ? "arrow-up" : "arrow-down"}`}
                         src={ArrowRight}
                         alt={"voir le contenu"}
                     />
                 </div>
 
-                <div className={clsx(toggle ? "showContent" : "hiddenContent")}>
+                <div className={`${toggle ? "showContent" : "hiddenContent"}`}>
                     {contentArray && contentArray.map(item => {
                         return (
                             <Typography variant={width > 769 ? "body-lg": "body-xs"} component={"p"}>{item}</Typography>

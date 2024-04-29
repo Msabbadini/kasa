@@ -1,14 +1,15 @@
-import {Banner} from "@/ui/ui_toolkit/banner/banner";
-import {Container} from "@/ui/components/container/container";
-import {Carousel} from "@/ui/ui_toolkit/carousel/carousel";
+
+import {Container} from "@/layouts/generic/container/container";
+import {Carousel} from "@/components/carousel/carousel";
 import {useParams} from "react-router-dom";
-import data from "@/api/data.json"
-import {Collapse} from "@/ui/ui_toolkit/collapse/collapse";
-import {Tags} from "@/ui/ui_toolkit/tags/tags";
-import {Typography} from "@/ui/ui_toolkit/typography/typography";
+import {Collapse} from "@/components/collapse/collapse";
+import {Tags} from "@/components/tags/tags";
+import {Typography} from "@/components/typography/typography";
 import useWindowDimension from "@/utils/useWindowDimension";
-import {Rating} from "@/ui/ui_toolkit/raiting/raiting";
-import {Avatar} from "@/ui/ui_toolkit/avatar/avatar";
+import {Rating} from "@/components/raiting/raiting";
+import {Avatar} from "@/components/avatar/avatar";
+import {useEffect, useState} from "react";
+import {getHousings} from "@/utils/api/api";
 
 interface DataType {
     pictures: Array<string>
@@ -26,10 +27,25 @@ interface HostType {
     name: string
 }
 
-export const LodgeView = () => {
-    const {width} = useWindowDimension()
+export const HousingView = () => {
     const idFiche = useParams().id
-    const dataFiche: DataType = data.filter(d => d.id === idFiche)[0]
+    const [data, setData] = useState<Array<any>>([])
+
+    const {width} = useWindowDimension()
+    const [dataFiche, setDataFiche] = useState<DataType|null>(null)
+
+    useEffect(() => {
+        getHousings(setData)
+    }, [])
+
+    useEffect(()=> {
+        const fiche = data.filter(d => d.id === idFiche)[0]
+        if (fiche) setDataFiche(fiche)
+    }, [data])
+
+    if (!idFiche) return null
+    if (!dataFiche) return null
+
     return (
         <Container>
             <div className={'fiche-content'}>
@@ -58,7 +74,7 @@ export const LodgeView = () => {
                             <Avatar size={width > 769 ? "medium" : "small"} src={dataFiche.host.picture}
                                     alt={dataFiche.host.name}/>
                         </div>
-                        <Rating numberStars={parseInt(dataFiche.rating)} defaultNumber={5}/>
+                        <Rating numberStars={Number.parseInt(dataFiche.rating)} defaultNumber={5}/>
 
                     </div>
                 </div>

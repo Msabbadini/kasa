@@ -18,8 +18,8 @@
 @import "ui/ui_toolkit/avatar/avatar";
 
 // Import modules
-@import "./modules/landing-page/hero-top";
-@import "./modules/landing-page/content";
-@import "./modules/fiche-immobiliere/fiche-immobiliere";
-@import "modules/about-page/about";
-@import "modules/error-page/error-page";
+@import "pages/landing-page/hero-top";
+@import "pages/landing-page/content";
+@import "pages/holdings/fiche-immobiliere";
+@import "pages/about-page/about";
+@import "pages/error-page/error-page";

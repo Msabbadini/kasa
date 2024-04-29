@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import React from "react";
 
 interface Props {
     size?: "small" | "medium" ;
@@ -17,7 +17,7 @@ export const Avatar = ({size = "medium", src, alt} : Props)=>{
             break;
     }
     return (
-        <div className={clsx(sizeStyles, "avatar")}>
+        <div className={`${sizeStyles} avatar`}>
             <img
                 src={src}
                 alt={alt}

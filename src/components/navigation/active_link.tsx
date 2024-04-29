@@ -1,7 +1,5 @@
 import React from "react";
 import {useMemo} from "react";
-
-import {Typography} from "@/components/typography/typography";
 import {NavLink} from "react-router-dom";
 interface Props {
     href: string;
