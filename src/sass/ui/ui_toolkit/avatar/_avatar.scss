@@ -1,0 +1,20 @@
+.small{
+  width: 32px;
+  height: 32px;
+}
+.medium{
+width: 64px;
+  height: 64px;
+}
+
+.avatar{
+  border-radius: 100%;
+  background-color: $grey600;
+
+  img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+}

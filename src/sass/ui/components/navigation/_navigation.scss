@@ -1,0 +1,30 @@
+header {
+  @include flex(row, space-between, center);
+  height: 68px;
+  margin:40px 0;
+
+  img {
+    height: 68px;
+  }
+
+  .menu {
+    @include flex();
+    gap: 50px;
+  }
+
+  @media screen and (max-width: 769px) {
+    height: 47px;
+    margin: 20px 0;
+    img {
+      height: 60%;
+    }
+    .menu {
+      gap: 20px;
+    }
+  }
+}
+
+.isActive {
+  text-decoration: underline;
+  font-weight: 600;
+}

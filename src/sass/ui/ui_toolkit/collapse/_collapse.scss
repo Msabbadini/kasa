@@ -1,0 +1,44 @@
+.collapse {
+  background-color: $grey300;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0 auto;
+
+  &-header {
+    @include flex(row, space-between, center);
+    background-color: $primary;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    .arrow {
+      transition: all 0.2s ease-in-out;
+      width: 12px;
+
+      &-up {
+        transform: rotate(-90deg);
+      }
+
+      &-down {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  .showContent{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    padding: 10px;
+    transition: visibility 0.5s ease-in-out,
+    opacity 0.5s ease-in-out,
+    height 0.2s ease-in-out;
+  }
+  .hiddenContent{
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+  }
+}

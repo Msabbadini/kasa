@@ -1,0 +1,21 @@
+.content{
+  background-color: #F6F6F6;
+  border-radius: 25px;
+
+}
+
+.gallery{
+  @include flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 50px;
+
+  @media screen and (max-width: 1230px){
+    gap: 25px;
+    padding:25px 15px;
+  }
+  @media screen and (max-width: 550px){
+    width: 100%;
+  }
+}
+

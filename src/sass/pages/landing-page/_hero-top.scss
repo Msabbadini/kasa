@@ -1,0 +1,33 @@
+
+.hero{
+
+  &-landing {
+    position: relative;
+    border-radius: 25px;
+    @include flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../public/assets/hero-top.png');
+    background-position: center;
+    background-size: cover;
+    height: 223px;
+    padding: 20px;
+    margin: 43px auto;
+    @media screen and (max-width: 769px) {
+      height: 111px;
+      margin: 20px 0;
+    }
+  }
+  &-about{
+    position: relative;
+    @include flex;
+    border-radius: 25px;
+    height: 223px;
+    margin: 43px auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../public/assets/about-top.png');
+    background-position: center;
+    background-size: cover;
+    @media screen and (max-width: 550px){
+      margin: 20px auto;
+      height: 120px;
+    }
+  }
+}

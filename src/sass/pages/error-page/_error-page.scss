@@ -1,0 +1,10 @@
+.error{
+  &-content{
+    @include flex(column,center,center)
+  }
+  &-link{
+    margin-top: 120px;
+    text-decoration: underline;
+    color: $primary;
+  }
+}
