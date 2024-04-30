@@ -1,7 +1,7 @@
 
 import {Container} from "@/layouts/generic/container/container";
 import {Carousel} from "@/components/carousel/carousel";
-import {useParams} from "react-router-dom";
+import {useParams,Navigate} from "react-router-dom";
 import {Collapse} from "@/components/collapse/collapse";
 import {Tags} from "@/components/tags/tags";
 import {Typography} from "@/components/typography/typography";
@@ -30,6 +30,7 @@ interface HostType {
 export const HousingView = () => {
     const idFiche = useParams().id
     const [data, setData] = useState<Array<any>>([])
+    const [redirectToError, setRedirectToError] = useState(false)
 
     const {width} = useWindowDimension()
     const [dataFiche, setDataFiche] = useState<DataType|null>(null)
@@ -40,11 +41,22 @@ export const HousingView = () => {
 
     useEffect(()=> {
         const fiche = data.filter(d => d.id === idFiche)[0]
-        if (fiche) setDataFiche(fiche)
+        console.log(fiche)
+        if (fiche !== undefined && fiche !== null) {
+            setRedirectToError(false)
+            setDataFiche(fiche)
+        }else {
+            setRedirectToError(true)
+        }
     }, [data])
 
     if (!idFiche) return null
     if (!dataFiche) return null
+
+    if (redirectToError) {
+        return <Navigate to="/error" replace={true} />
+    }
+
 
     return (
         <Container>
